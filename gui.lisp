@@ -1,5 +1,9 @@
 (cl:in-package #:awele)
 
+;;; For now, we can handle only one game at a time.  This game is
+;;; stored in the special variable *GAME*.  It would be better to
+;;; support different sessions, so that when the URI "/house" (without
+;;; a house number following), a new session is created. 
 (defvar *game*)
 
 ;;; Main entry point.  When this function is called, the server goes
