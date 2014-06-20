@@ -12,4 +12,4 @@
 			(setf (cdr (last houses)) houses))
 	    :accessor houses)))
 
-   
+(defvar *game*)
