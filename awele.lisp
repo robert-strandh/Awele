@@ -12,6 +12,9 @@
 			(setf (cdr (last houses)) houses))
 	    :accessor houses)))
 
+(defun new-game ()
+  (make-instance 'game))
+
 (defun move (game house-number)
   (let* ((rest (nthcdr house-number (houses game)))
 	 (seed-count (seed-count (car rest))))
