@@ -40,6 +40,11 @@
 	     (format stream "</tr>"))
     (format stream "</table></body></hmtl>")))
 
+;;; We serve URIs that end with "/house" or "/house?n=N" where N is a
+;;; small non-negative integer.  In the first case, the value of the
+;;; parameter will be NIL and we then initialize a new game.  In the
+;;; second case, we take it to mean that house number N was clicked on
+;;; (this is how it is presented in the function SHOW-GAME above).
 (hunchentoot:define-easy-handler (house-click-handler :uri "/house") (n)
   (if (null n)
       (setf *game* (new-game))
