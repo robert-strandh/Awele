@@ -12,4 +12,13 @@
 			(setf (cdr (last houses)) houses))
 	    :accessor houses)))
 
+(defun move (game house-number)
+  (let* ((rest (nthcdr house-number (houses game)))
+	 (seed-count (seed-count (car rest))))
+    (loop for houses = (cdr rest) then (cdr houses)
+	  until (zerop seed-count)
+	  do (incf (seed-count (car houses))))))
+
 (defvar *game*)
+
+
