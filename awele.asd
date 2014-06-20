@@ -4,4 +4,6 @@
   :depends-on (:hunchentoot)
   :serial t
   :components
-  ((:file "packages")))
+  ((:file "packages")
+   (:file "awele")))
+
