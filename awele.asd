@@ -5,5 +5,5 @@
   :serial t
   :components
   ((:file "packages")
-   (:file "awele")))
-
+   (:file "awele")
+   (:file "gui")))
