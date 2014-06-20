@@ -23,7 +23,3 @@
 	  until (zerop seed-count)
 	  do (incf (seed-count (car houses)))
 	     (decf seed-count))))
-
-(defvar *game*)
-
-
