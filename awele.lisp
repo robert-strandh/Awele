@@ -9,7 +9,8 @@
    (%houses :initform (let ((houses (loop repeat 12
 					  collect (make-instance 'house))))
 			;; Make the list circular.
-			(setf (cdr (last houses)) houses))
+			(setf (cdr (last houses)) houses)
+			houses)
 	    :accessor houses)))
 
 (defun new-game ()
