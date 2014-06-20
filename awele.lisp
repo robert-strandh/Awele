@@ -18,9 +18,11 @@
 (defun move (game house-number)
   (let* ((rest (nthcdr house-number (houses game)))
 	 (seed-count (seed-count (car rest))))
+    (setf (seed-count (car rest)) 0)
     (loop for houses = (cdr rest) then (cdr houses)
 	  until (zerop seed-count)
-	  do (incf (seed-count (car houses))))))
+	  do (incf (seed-count (car houses)))
+	     (decf seed-count))))
 
 (defvar *game*)
 
