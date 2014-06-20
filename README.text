@@ -1,0 +1,27 @@
+Game of AWELE.
+
+This is an embryonic version of the game.  It demonstrates how to use
+the Hunchentoot web server as a GUI engine and an ordinary web browser
+to display the game.  A lot of work needs to be done, including
+improved graphics and respecting the rules of the game.
+
+To install (we assume you have a good Common Lisp system installed, as
+well as Quicklisp):
+
+   * Make sure that ASDF finds the system definition by including the
+     directory in which this file is located in the list of
+     directories in asdf:*central-registry*.
+
+   * Start your Lisp system.  Type (asdf:operate 'asdf:load-op :awele)
+     to the prompt.  The system should build, but there will be many
+     warnings from the installation of Hunchentoot.  There should be
+     no warnings from the :AWELE system itself.
+
+   * Start the web server by typing (awele:awele) to the prompt.  This
+     function call does not return because the server is now in an
+     infinite loop.  If you are in SLIME you can type C-c C-c to
+     interrupt the server. 
+
+   * Point your browser to the URI 127.0.0.1:4242/awele.  You should
+     see 12 houses, each with 4 seeds in it.  To make a move, click on
+     one of the houses.
