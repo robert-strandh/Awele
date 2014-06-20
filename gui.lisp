@@ -41,7 +41,7 @@
     (format stream "</table></body></hmtl>")))
 
 (hunchentoot:define-easy-handler (house-click-handler :uri "/house") (n)
-  (if (equal n "")
+  (if (null n)
       (setf *game* (new-game))
       (move *game* (read-from-string n)))
   (show-game *game*))
