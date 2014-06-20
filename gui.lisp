@@ -1,5 +1,8 @@
 (cl:in-package #:awele)
 
+;;; Main entry point.  When this function is called, the server goes
+;;; into an infinite loop serving requests.  If you still want to be
+;;; able to evaluate forms, run this function in its own thread.
 (defun awele ()
   (setf *game* (make-instance 'game))
   ;; Use a single-threaded taskmaster to avoid having to use locking. 
