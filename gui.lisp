@@ -2,7 +2,7 @@
 
 ;;; For now, we can handle only one game at a time.  This game is
 ;;; stored in the special variable *GAME*.  It would be better to
-;;; support different sessions, so that when the URI "/house" (without
+;;; support different sessions, so that when the URI "/awele" (without
 ;;; a house number following), a new session is created. 
 (defvar *game*)
 
@@ -41,7 +41,7 @@
 		   for house-number = (pop house-numbers)
 		   for house = (nth house-number houses)
 		   do (format stream
-			      "<td><a href=\"house?n=~a\">"
+			      "<td><a href=\"awele?n=~a\">"
 			      house-number)
 		      (format stream
 			      "<img src=\"Images/house-~a.png\"></a></td>"
@@ -49,12 +49,12 @@
 	     (format stream "</tr>"))
     (format stream "</table></body></hmtl>")))
 
-;;; We serve URIs that end with "/house" or "/house?n=N" where N is a
+;;; We serve URIs that end with "/awele" or "/awele?n=N" where N is a
 ;;; small non-negative integer.  In the first case, the value of the
 ;;; parameter will be NIL and we then initialize a new game.  In the
 ;;; second case, we take it to mean that house number N was clicked on
 ;;; (this is how it is presented in the function SHOW-GAME above).
-(hunchentoot:define-easy-handler (house-click-handler :uri "/house") (n)
+(hunchentoot:define-easy-handler (house-click-handler :uri "/awele") (n)
   (if (null n)
       (setf *game* (new-game))
       (move *game* (read-from-string n)))
