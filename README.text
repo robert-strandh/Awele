@@ -8,6 +8,9 @@ improved graphics and respecting the rules of the game.
 To install (we assume you have a good Common Lisp system installed, as
 well as Quicklisp):
 
+   * Make sure you have fig2dev installed.  Then run `make' in the
+     Images directory.
+
    * Make sure that ASDF finds the system definition by including the
      directory in which this file is located in the list of
      directories in asdf:*central-registry*.
