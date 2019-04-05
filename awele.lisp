@@ -1,12 +1,12 @@
 (cl:in-package #:awele)
 
 ;;; A house is where we keep the seeds during the game.  Initially, a
-;;; house has 4 seeds. 
+;;; house has 4 seeds.
 (defclass house ()
   ((%seed-count :initform 4 :accessor seed-count)))
 
 ;;; This is an incomplete version of the game.  It needs to have a
-;;; score house for each player as well. 
+;;; score house for each player as well.
 (defclass game ()
   ((%player-1-captured :initform 0 :accessor player-1-captured)
    (%player-2-captured :initform 0 :accessor player-2-captured)
